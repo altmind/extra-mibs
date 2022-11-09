@@ -1,0 +1,1920 @@
++--pdu2(6)
+   |
+   +--traps(0)
+   |  |
+   |  +--trapInformation(0)
+   |  |  |
+   |  |  +--trapInformationTable(1)
+   |  |  |  |
+   |  |  |  +--trapInformationEntry(1)
+   |  |  |     |  Index: pduId
+   |  |  |     |
+   |  |  |     +-- ---N String    userName(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- ---N String    targetUser(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- ---N String    imageVersion(5)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- ---N String    roleName(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- ---N String    smtpMessageRecipients(7)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- ---N String    smtpServer(8)
+   |  |  |              Textual Convention: DisplayString
+   |  |  |              Size: 0..255
+   |  |  |
+   |  |  +-- ---N EnumVal   oldSensorState(2)
+   |  |  |        Textual Convention: SensorStateEnumeration
+   |  |  |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  +-- ---N Integer32 pduNumber(3)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N Integer32 inletPoleNumber(5)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N Integer32 outletPoleNumber(7)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N Integer32 externalSensorNumber(8)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N EnumVal   typeOfSensor(10)
+   |  |  |        Textual Convention: SensorTypeEnumeration
+   |  |  |        Values: rmsCurrent(1), peakCurrent(2), unbalancedCurrent(3), rmsVoltage(4), activePower(5), apparentPower(6), powerFactor(7), activeEnergy(8), apparentEnergy(9), temperature(10), humidity(11), airFlow(12), airPressure(13), onOff(14), trip(15), vibration(16), waterDetection(17), smokeDetection(18), binary(19), contact(20), fanSpeed(21), surgeProtectorStatus(22), frequency(23), phaseAngle(24), rmsVoltageLN(25), residualCurrent(26), rcmState(27), absoluteHumidity(28), reactivePower(29), other(30), none(31), powerQuality(32), overloadStatus(33), overheatStatus(34), displacementPowerFactor(35), residualDcCurrent(36), fanStatus(37), inletPhaseSyncAngle(38), inletPhaseSync(39), operatingState(40), activeInlet(41), illuminance(42), doorContact(43), tamperDetection(44), motionDetection(45), i1smpsStatus(46), i2smpsStatus(47), switchStatus(48), doorLockState(49), doorHandleLock(50), crestFactor(51)
+   |  |  +-- ---N String    errorDescription(11)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N EnumVal   deviceChangedParameter(12)
+   |  |  |        Textual Convention: DeviceIdentificationParameterEnumeration
+   |  |  |        Values: pduName(0), sysContact(1), sysName(2), sysLocation(3)
+   |  |  +-- ---N String    changedParameterNewValue(13)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N EnumVal   lhxSupportEnabled(14)
+   |  |  |        Textual Convention: TruthValue
+   |  |  |        Values: true(1), false(2)
+   |  |  +-- ---N String    webcamModel(15)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    webcamConnectionPort(16)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N Unsigned  agentInetPortNumber(18)
+   |  |  |        Textual Convention: InetPortNumber
+   |  |  |        Range: 0..65535
+   |  |  +-- ---N String    peripheralDeviceRomcode(19)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N EnumVal   peripheralDeviceFirmwareUpdateState(20)
+   |  |  |        Textual Convention: PeripheralDeviceFirmwareUpdateStateEnumeration
+   |  |  |        Values: started(1), successful(2), failed(3)
+   |  |  +-- ---N Integer32 circuitNumber(21)
+   |  |  |        Range: 1..33000
+   |  |  +-- ---N Integer32 circuitPoleNumber(22)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N String    phoneNumber(23)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    smartCardReaderId(24)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N Unsigned  smartCardTimestamp(25)
+   |  |  +-- ---N String    smartCardType(26)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    smartCardId(27)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    suspectedTripCauseLabel(28)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    smartCardReaderManufacturer(29)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    smartCardReaderProduct(30)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    smartCardReaderSerialNumber(31)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N Integer32 smartCardReaderChannel(32)
+   |  |  |        Range: -1..256
+   |  |  +-- ---N Integer32 outletGroupNumber(33)
+   |  |  |        Range: 1..256
+   |  |  +-- ---N String    serverPowerOperation(34)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N EnumVal   serverPowerResult(35)
+   |  |  |        Textual Convention: ServerPowerControlResultEnumeration
+   |  |  |        Values: noError(0), shutdownCmdFailed(1), switchingOffFailed(2), switchingOnFailed(3), powerCheckTimeout(4)
+   |  |  +-- ---N String    webcamName(36)
+   |  |  |        Textual Convention: DisplayString
+   |  |  |        Size: 0..255
+   |  |  +-- ---N String    webcamFolderUrl(37)
+   |  |           Textual Convention: DisplayString
+   |  |           Size: 0..255
+   |  |
+   |  +--systemStarted(1)
+   |  +--systemReset(2)
+   |  +--userLogin(3)
+   |  +--userLogout(4)
+   |  +--userAuthenticationFailure(5)
+   |  +--userSessionTimeout(8)
+   |  +--userAdded(11)
+   |  +--userModified(12)
+   |  +--userDeleted(13)
+   |  +--roleAdded(14)
+   |  +--roleModified(15)
+   |  +--roleDeleted(16)
+   |  +--deviceUpdateStarted(20)
+   |  +--deviceUpdateCompleted(21)
+   |  +--userBlocked(22)
+   |  +--powerControl(23)
+   |  +--userPasswordChanged(24)
+   |  +--passwordSettingsChanged(28)
+   |  +--firmwareValidationFailed(38)
+   |  +--logFileCleared(41)
+   |  +--bulkConfigurationSaved(53)
+   |  +--bulkConfigurationCopied(54)
+   |  +--pduSensorStateChange(60)
+   |  +--inletSensorStateChange(61)
+   |  +--inletPoleSensorStateChange(62)
+   |  +--outletSensorStateChange(63)
+   |  +--outletPoleSensorStateChange(64)
+   |  +--overCurrentProtectorSensorStateChange(65)
+   |  +--externalSensorStateChange(66)
+   |  +--smtpMessageTransmissionFailure(67)
+   |  +--ldapError(68)
+   |  +--deviceUpdateFailed(70)
+   |  +--loadSheddingModeEntered(71)
+   |  +--loadSheddingModeExited(72)
+   |  +--pingServerEnabled(73)
+   |  +--pingServerDisabled(74)
+   |  +--serverNotReachable(75)
+   |  +--serverReachable(76)
+   |  +--rfCodeTagConnected(77)
+   |  +--rfCodeTagDisconnected(78)
+   |  +--deviceIdentificationChanged(79)
+   |  +--usbSlaveConnected(80)
+   |  +--usbSlaveDisconnected(81)
+   |  +--lhxSupportChanged(82)
+   |  +--userAcceptedRestrictedServiceAgreement(83)
+   |  +--userDeclinedRestrictedServiceAgreement(84)
+   |  +--wireSensorStateChange(85)
+   |  +--transferSwitchSensorStateChange(86)
+   |  +--deviceSettingsSaved(88)
+   |  +--deviceSettingsRestored(89)
+   |  +--webcamInserted(90)
+   |  +--webcamRemoved(91)
+   |  +--inletEnabled(92)
+   |  +--inletDisabled(93)
+   |  +--serverConnectivityUnrecoverable(94)
+   |  +--radiusError(95)
+   |  +--serverReachabilityError(96)
+   |  +--inletSensorReset(97)
+   |  +--outletSensorReset(98)
+   |  +--unknownPeripheralDeviceAttached(99)
+   |  +--peripheralDeviceFirmwareUpdate(100)
+   |  +--unitSensorReset(101)
+   |  +--unitSensorStateChange(102)
+   |  +--circuitSensorStateChange(103)
+   |  +--circuitPoleSensorStateChange(104)
+   |  +--circuitAdded(105)
+   |  +--circuitDeleted(106)
+   |  +--circuitModified(107)
+   |  +--circuitSensorReset(108)
+   |  +--powerMeterAdded(109)
+   |  +--powerMeterDeleted(110)
+   |  +--powerMeterModified(111)
+   |  +--smsMessageTransmissionFailure(112)
+   |  +--smartCardInserted(113)
+   |  +--smartCardRemoved(114)
+   |  +--rawConfigurationDownloaded(115)
+   |  +--rawConfigurationUpdated(116)
+   |  +--hwFailureStatusChanged(117)
+   |  +--outletGroupAdded(118)
+   |  +--outletGroupModified(119)
+   |  +--outletGroupDeleted(120)
+   |  +--outletGroupSensorStateChange(121)
+   |  +--outletGroupSensorReset(122)
+   |  +--outletGroupPowerControl(123)
+   |  +--serverPowerControlInitiated(124)
+   |  +--serverPowerControlCompleted(125)
+   |  +--webcamStorageUploadStarted(126)
+   |  +--testEventTriggered(127)
+   |  +--actuatorSwitched(128)
+   |
+   +--board(1)
+   |
+   +--environmental(2)
+   |
+   +--configuration(3)
+   |  |
+   |  +-- -R-- Integer32 pduCount(1)
+   |  |
+   |  +--unit(2)
+   |  |  |
+   |  |  +--nameplateTable(1)
+   |  |  |  |
+   |  |  |  +--nameplateEntry(1)
+   |  |  |     |  Index: pduId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 pduId(1)
+   |  |  |     |        Range: 0..256
+   |  |  |     +-- -R-- String    pduManufacturer(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduModel(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduSerialNumber(4)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduRatedVoltage(5)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduRatedCurrent(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduRatedFrequency(7)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduRatedVA(8)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pduImage(9)
+   |  |  |              Textual Convention: URL
+   |  |  |              Size: 0..255
+   |  |  |
+   |  |  +--unitConfigurationTable(2)
+   |  |  |  |
+   |  |  |  +--unitConfigurationEntry(1)
+   |  |  |     |  Index: pduId
+   |  |  |     |
+   |  |  |     +-- -R-- Integer32 inletCount(2)
+   |  |  |     |        Range: 0..256
+   |  |  |     +-- -R-- Integer32 overCurrentProtectorCount(3)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- Integer32 outletCount(4)
+   |  |  |     |        Range: 0..256
+   |  |  |     +-- -R-- Integer32 inletControllerCount(5)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- Integer32 outletControllerCount(6)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- Integer32 externalSensorCount(7)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- IpAddr    pxIPAddress(8)
+   |  |  |     +-- -R-- IpAddr    netmask(9)
+   |  |  |     +-- -R-- IpAddr    gateway(10)
+   |  |  |     +-- -R-- String    pxMACAddress(11)
+   |  |  |     |        Textual Convention: MacAddress
+   |  |  |     |        Size: 6
+   |  |  |     +-- -R-- String    utcOffset(12)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    pduName(13)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   networkInterfaceType(14)
+   |  |  |     |        Textual Convention: NetworkInterfaceTypeEnumeration
+   |  |  |     |        Values: wired(0), wireless(1)
+   |  |  |     +-- -RW- EnumVal   externalSensorsZCoordinateUnits(34)
+   |  |  |     |        Textual Convention: ExternalSensorsZCoordinateUnitsEnumeration
+   |  |  |     |        Values: rackUnits(0), text(1)
+   |  |  |     +-- -R-- BitString unitDeviceCapabilities(35)
+   |  |  |     |        Values: activePower(4), activeEnergy(7), i1smpsStatus(45), i2smpsStatus(46)
+   |  |  |     +-- -RW- Unsigned  outletSequencingDelay(36)
+   |  |  |     |        Range: 100..10000
+   |  |  |     +-- -RW- Unsigned  globalOutletPowerCyclingPowerOffPeriod(37)
+   |  |  |     |        Range: 1..3600
+   |  |  |     +-- -RW- EnumVal   globalOutletStateOnStartup(38)
+   |  |  |     |        Textual Convention: GlobalOutletStateOnStartupEnumeration
+   |  |  |     |        Values: off(0), on(1), lastKnownState(2)
+   |  |  |     +-- -RW- String    outletPowerupSequence(39)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- Unsigned  pduPowerCyclingPowerOffPeriod(40)
+   |  |  |     |        Range: 1..3600
+   |  |  |     +-- -R-- EnumVal   pduDaisychainMemberType(41)
+   |  |  |     |        Textual Convention: DaisychainMemberTypeEnumeration
+   |  |  |     |        Values: standalone(0), master(1), slave(2)
+   |  |  |     +-- -R-- Integer32 managedExternalSensorCount(42)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- EnumVal   pxInetAddressType(50)
+   |  |  |     |        Textual Convention: InetAddressType
+   |  |  |     |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |  |  |     +-- -R-- String    pxInetIPAddress(51)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pxInetNetmask(52)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    pxInetGateway(53)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- EnumVal   loadShedding(55)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- Integer32 serverCount(56)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -RW- Unsigned  inrushGuardDelay(57)
+   |  |  |     |        Range: 100..10000
+   |  |  |     +-- -R-- EnumVal   cascadedDeviceConnected(58)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   synchronizeWithNTPServer(59)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   useDHCPProvidedNTPServer(60)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   firstNTPServerAddressType(61)
+   |  |  |     |        Textual Convention: InetAddressType
+   |  |  |     |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |  |  |     +-- -RW- String    firstNTPServerAddress(62)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- EnumVal   secondNTPServerAddressType(63)
+   |  |  |     |        Textual Convention: InetAddressType
+   |  |  |     |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |  |  |     +-- -RW- String    secondNTPServerAddress(64)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- Integer32 wireCount(65)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- Integer32 transferSwitchCount(66)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -R-- EnumVal   productType(67)
+   |  |  |     |        Textual Convention: ProductTypeEnumeration
+   |  |  |     |        Values: rackPdu(0), bcm(1), transferSwitch(2), powerMeter(3)
+   |  |  |     +-- -R-- Integer32 meteringControllerCount(68)
+   |  |  |     |        Range: 0..255
+   |  |  |     +-- -RW- EnumVal   relayBehaviorOnPowerLoss(69)
+   |  |  |     |        Textual Convention: RelayPowerLossBehaviorEnumeration
+   |  |  |     |        Values: nonLatching(0), latching(1)
+   |  |  |     +-- -R-- EnumVal   deviceCascadeType(70)
+   |  |  |     |        Textual Convention: DeviceCascadeTypeEnumeration
+   |  |  |     |        Values: bridging(0), portForwarding(1), none(2)
+   |  |  |     +-- -R-- Integer32 deviceCascadePosition(71)
+   |  |  |     |        Range: 0..99
+   |  |  |     +-- -RW- EnumVal   peripheralDevicesAutoManagement(72)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   frontPanelOutletSwitching(73)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   frontPanelRCMSelfTest(74)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   frontPanelActuatorControl(75)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- Integer32 circuitCount(76)
+   |  |  |     |        Range: 0..96
+   |  |  |     +-- -R-- Integer32 activeDNSServerCount(77)
+   |  |  |     |        Range: 0..16
+   |  |  |     +-- -R-- Integer32 activeNTPServerCount(78)
+   |  |  |     |        Range: 0..16
+   |  |  |     +-- -R-- Integer32 peripheralDevicePackageCount(79)
+   |  |  |     |        Range: 0..256
+   |  |  |     +-- -R-- Integer32 outletGroupCount(80)
+   |  |  |              Range: 0..128
+   |  |  |
+   |  |  +--controllerConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--controllerConfigurationEntry(1)
+   |  |  |     |  Index: pduId, boardType, boardIndex
+   |  |  |     |
+   |  |  |     +-- ---- EnumVal   boardType(1)
+   |  |  |     |        Textual Convention: BoardTypeEnumeration
+   |  |  |     |        Values: mainController(1), inletController(2), outletController(3), meteringController(4)
+   |  |  |     +-- ---- Integer32 boardIndex(2)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    boardVersion(4)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    boardFirmwareVersion(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- Unsigned  boardFirmwareTimeStamp(8)
+   |  |  |
+   |  |  +--logConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--logConfigurationEntry(1)
+   |  |  |     |  Index: pduId
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   dataLogging(1)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- Integer32 measurementPeriod(2)
+   |  |  |     +-- -RW- Integer32 measurementsPerLogEntry(3)
+   |  |  |     |        Range: 1..600
+   |  |  |     +-- -R-- Integer32 logSize(4)
+   |  |  |     +-- -RW- EnumVal   dataLoggingEnableForAllSensors(5)
+   |  |  |              Textual Convention: TruthValue
+   |  |  |              Values: true(1), false(2)
+   |  |  |
+   |  |  +--unitSensorConfigurationTable(5)
+   |  |  |  |
+   |  |  |  +--unitSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, sensorType
+   |  |  |     |
+   |  |  |     +-- ---- EnumVal   sensorType(1)
+   |  |  |     |        Textual Convention: SensorTypeEnumeration
+   |  |  |     |        Values: rmsCurrent(1), peakCurrent(2), unbalancedCurrent(3), rmsVoltage(4), activePower(5), apparentPower(6), powerFactor(7), activeEnergy(8), apparentEnergy(9), temperature(10), humidity(11), airFlow(12), airPressure(13), onOff(14), trip(15), vibration(16), waterDetection(17), smokeDetection(18), binary(19), contact(20), fanSpeed(21), surgeProtectorStatus(22), frequency(23), phaseAngle(24), rmsVoltageLN(25), residualCurrent(26), rcmState(27), absoluteHumidity(28), reactivePower(29), other(30), none(31), powerQuality(32), overloadStatus(33), overheatStatus(34), displacementPowerFactor(35), residualDcCurrent(36), fanStatus(37), inletPhaseSyncAngle(38), inletPhaseSync(39), operatingState(40), activeInlet(41), illuminance(42), doorContact(43), tamperDetection(44), motionDetection(45), i1smpsStatus(46), i2smpsStatus(47), switchStatus(48), doorLockState(49), doorHandleLock(50), crestFactor(51)
+   |  |  |     +-- -RW- EnumVal   unitSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   unitSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  unitSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  unitSensorAccuracy(8)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  unitSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  unitSensorTolerance(10)
+   |  |  |     +-- -R-- Unsigned  unitSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  unitSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  unitSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  unitSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  unitSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  unitSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  unitSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  unitSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString unitSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 unitSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 unitSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 unitSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 unitSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 unitSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 unitSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--activeDNSServerTable(6)
+   |  |  |  |
+   |  |  |  +--activeDNSServerEntry(1)
+   |  |  |     |  Index: pduId, activeDNSServerIndex
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 activeDNSServerIndex(2)
+   |  |  |     |        Range: 1..16
+   |  |  |     +-- -R-- EnumVal   activeDNSServerAddressType(3)
+   |  |  |     |        Textual Convention: InetAddressType
+   |  |  |     |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |  |  |     +-- -R-- String    activeDNSServerAddress(4)
+   |  |  |     |        Textual Convention: InetAddress
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   activeDNSServerAddressSource(5)
+   |  |  |              Textual Convention: AddressSourceEnumeration
+   |  |  |              Values: static(1), dhcp(2), dhcpv6(3)
+   |  |  |
+   |  |  +--activeNTPServerTable(7)
+   |  |     |
+   |  |     +--activeNTPServerEntry(1)
+   |  |        |  Index: pduId, activeNTPServerIndex
+   |  |        |
+   |  |        +-- ---- Integer32 activeNTPServerIndex(2)
+   |  |        |        Range: 1..16
+   |  |        +-- -R-- EnumVal   activeNTPServerAddressType(3)
+   |  |        |        Textual Convention: InetAddressType
+   |  |        |        Values: unknown(0), ipv4(1), ipv6(2), ipv4z(3), ipv6z(4), dns(16)
+   |  |        +-- -R-- String    activeNTPServerAddress(4)
+   |  |        |        Textual Convention: InetAddress
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- EnumVal   activeNTPServerAddressSource(5)
+   |  |                 Textual Convention: AddressSourceEnumeration
+   |  |                 Values: static(1), dhcp(2), dhcpv6(3)
+   |  |
+   |  +--inlets(3)
+   |  |  |
+   |  |  +--inletConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--inletConfigurationEntry(1)
+   |  |  |     |  Index: pduId, inletId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 inletId(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    inletLabel(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    inletName(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   inletPlug(4)
+   |  |  |     |        Textual Convention: PlugTypeEnumeration
+   |  |  |     |        Values: plugOTHER(-1), plugNONE(0), plug56P320(1), plug56P520(2), plug56P532(3), plugCS8365C(4), plugIEC320C14(5), plugIEC320C20(6), plugIEC603093WIRE250V16A(7), plugIEC603093WIRE250V20A(8), plugIEC603093WIRE250V30A(9), plugIEC603093WIRE250V32A(10), plugIEC603093WIRE250V60A(11), plugIEC603093WIRE250V63A(12), plugIEC603093WIRE250V100A(13), plugIEC603093WIRE250V125A(14), plugIEC603094WIRE250V20A(15), plugIEC603094WIRE250V30A(16), plugIEC603094WIRE250V60A(17), plugIEC603094WIRE250V100A(18), plugIEC603095WIRE208V20A(23), plugIEC603095WIRE208V30A(24), plugIEC603095WIRE208V60A(25), plugIEC603095WIRE208V100A(26), plugIEC603095WIRE415V16A(27), plugIEC603095WIRE415V32A(28), plugIEC603095WIRE415V63A(29), plugIEC603095WIRE415V125A(30), plugIEC603095WIRE480V20A(31), plugIEC603095WIRE480V30A(32), plugIEC603095WIRE480V60A(33), plugIEC603095WIRE480V100A(34), plugNEMA515P(35), plugNEMAL515P(36), plugNEMA520P(37), plugNEMAL520P(38), plugNEMAL530P(39), plugNEMAL615P(40), plugNEMAL620P(41), plugNEMAL630P(42), plugNEMAL1520P(43), plugNEMAL1530P(44), plugNEMAL2120P(45), plugNEMAL2130P(46), plugNEMAL2230P(47), plug56P320F(48), plug56PA320(49)
+   |  |  |     +-- -R-- Integer32 inletPoleCount(5)
+   |  |  |     |        Range: 2..5
+   |  |  |     +-- -R-- String    inletRatedVoltage(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    inletRatedCurrent(7)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    inletRatedFrequency(8)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    inletRatedVA(9)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- BitString inletDeviceCapabilities(10)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), unbalancedCurrent(2), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), surgeProtectorStatus(21), frequency(22), phaseAngle(23), residualCurrent(25), rcmState(26), reactivePower(28), powerQuality(31), displacementPowerFactor(34), residualDcCurrent(35), crestFactor(50)
+   |  |  |     +-- -R-- BitString inletPoleCapabilities(11)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), phaseAngle(23), rmsVoltageLN(24), residualCurrent(25), rcmState(26), reactivePower(28), displacementPowerFactor(34), residualDcCurrent(35), crestFactor(50)
+   |  |  |     +-- -R-- String    inletPlugDescriptor(12)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- EnumVal   inletEnableState(13)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- Unsigned  inletRCMResidualOperatingCurrent(14)
+   |  |  |
+   |  |  +--inletSensorConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--inletSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, inletId, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   inletSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   inletSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  inletSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  inletSensorAccuracy(8)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  inletSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  inletSensorTolerance(10)
+   |  |  |     +-- -R-- Unsigned  inletSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  inletSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  inletSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  inletSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  inletSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  inletSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  inletSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  inletSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString inletSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 inletSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 inletSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 inletSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 inletSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 inletSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 inletSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--inletPoleConfigurationTable(5)
+   |  |  |  |
+   |  |  |  +--inletPoleConfigurationEntry(1)
+   |  |  |     |  Index: pduId, inletId, inletPoleIndex
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   inletPoleLine(1)
+   |  |  |     |        Textual Convention: LineEnumeration
+   |  |  |     |        Values: lineL1(1), lineL2(2), lineL3(3), lineNeutral(4)
+   |  |  |     +-- -R-- Integer32 inletPoleNode(2)
+   |  |  |
+   |  |  +--inletPoleSensorConfigurationTable(6)
+   |  |     |
+   |  |     +--inletPoleSensorConfigurationEntry(1)
+   |  |        |  Index: pduId, inletId, inletPoleIndex, sensorType
+   |  |        |
+   |  |        +-- ---- Integer32 inletPoleIndex(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -RW- EnumVal   inletPoleSensorLogAvailable(4)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   inletPoleSensorUnits(6)
+   |  |        |        Textual Convention: SensorUnitsEnumeration
+   |  |        |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |        +-- -R-- Unsigned  inletPoleSensorDecimalDigits(7)
+   |  |        +-- -R-- Unsigned  inletPoleSensorAccuracy(8)
+   |  |        |        Textual Convention: HundredthsOfAPercentage
+   |  |        |        Range: 0..10000
+   |  |        +-- -R-- Unsigned  inletPoleSensorResolution(9)
+   |  |        +-- -R-- Unsigned  inletPoleSensorTolerance(10)
+   |  |        +-- -R-- Unsigned  inletPoleSensorMaximum(11)
+   |  |        +-- -R-- Unsigned  inletPoleSensorMinimum(12)
+   |  |        +-- -RW- Unsigned  inletPoleSensorHysteresis(13)
+   |  |        +-- -RW- Unsigned  inletPoleSensorStateChangeDelay(14)
+   |  |        |        Range: 0..300
+   |  |        +-- -RW- Unsigned  inletPoleSensorLowerCriticalThreshold(21)
+   |  |        +-- -RW- Unsigned  inletPoleSensorLowerWarningThreshold(22)
+   |  |        +-- -RW- Unsigned  inletPoleSensorUpperCriticalThreshold(23)
+   |  |        +-- -RW- Unsigned  inletPoleSensorUpperWarningThreshold(24)
+   |  |        +-- -RW- BitString inletPoleSensorEnabledThresholds(25)
+   |  |        |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |        +-- -R-- Integer32 inletPoleSensorSignedMaximum(26)
+   |  |        +-- -R-- Integer32 inletPoleSensorSignedMinimum(27)
+   |  |        +-- -RW- Integer32 inletPoleSensorSignedLowerCriticalThreshold(28)
+   |  |        +-- -RW- Integer32 inletPoleSensorSignedLowerWarningThreshold(29)
+   |  |        +-- -RW- Integer32 inletPoleSensorSignedUpperCriticalThreshold(30)
+   |  |        +-- -RW- Integer32 inletPoleSensorSignedUpperWarningThreshold(31)
+   |  |
+   |  +--overCurrentProtector(4)
+   |  |  |
+   |  |  +--overCurrentProtectorConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--overCurrentProtectorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, overCurrentProtectorIndex
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 overCurrentProtectorIndex(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    overCurrentProtectorLabel(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    overCurrentProtectorName(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   overCurrentProtectorType(4)
+   |  |  |     |        Textual Convention: OverCurrentProtectorTypeEnumeration
+   |  |  |     |        Values: ocpBREAKER1POLE(1), ocpBREAKER2POLE(2), ocpBREAKER3POLE(3), ocpFUSE(4), ocpFUSEPAIR(5), ocpRCBO2POLE(6), ocpRCBO3POLE(7), ocpRCBO4POLE(8)
+   |  |  |     +-- -R-- String    overCurrentProtectorRatedCurrent(5)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- Integer32 overCurrentProtectorPoleCount(6)
+   |  |  |     |        Range: 1..3
+   |  |  |     +-- -R-- BitString overCurrentProtectorCapabilities(9)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), trip(14)
+   |  |  |     +-- -R-- ObjID     overCurrentProtectorPowerSource(10)
+   |  |  |              Textual Convention: RowPointer
+   |  |  |
+   |  |  +--overCurrentProtectorSensorConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--overCurrentProtectorSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, overCurrentProtectorIndex, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   overCurrentProtectorSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   overCurrentProtectorSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorAccuracy(8)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorTolerance(10)
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  overCurrentProtectorSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  overCurrentProtectorSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString overCurrentProtectorSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 overCurrentProtectorSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 overCurrentProtectorSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 overCurrentProtectorSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 overCurrentProtectorSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 overCurrentProtectorSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 overCurrentProtectorSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--overCurrentProtectorPoleConfigurationTable(5)
+   |  |     |
+   |  |     +--overCurrentProtectorPoleConfigurationEntry(1)
+   |  |        |  Index: pduId, overCurrentProtectorIndex, overCurrentProtectorPoleIndex
+   |  |        |
+   |  |        +-- ---- Integer32 overCurrentProtectorPoleIndex(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -R-- EnumVal   overCurrentProtectorPoleLine(2)
+   |  |        |        Textual Convention: LineEnumeration
+   |  |        |        Values: lineL1(1), lineL2(2), lineL3(3), lineNeutral(4)
+   |  |        +-- -R-- Integer32 overCurrentProtectorPoleInNode(3)
+   |  |        +-- -R-- Integer32 overCurrentProtectorPoleOutNode(4)
+   |  |
+   |  +--outlets(5)
+   |  |  |
+   |  |  +--outletConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--outletConfigurationEntry(1)
+   |  |  |     |  Index: pduId, outletId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 outletId(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    outletLabel(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    outletName(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   outletReceptacle(4)
+   |  |  |     |        Textual Convention: ReceptacleTypeEnumeration
+   |  |  |     |        Values: receptacleOTHER(-1), receptacleNONE(0), receptacleBS1363(1), receptacle56P532(3), receptacleCS8364C(4), receptacleIEC320C13(5), receptacleIEC320C19(6), receptacleIEC603093WIRE250V16A(7), receptacleIEC603093WIRE250V20A(8), receptacleIEC603093WIRE250V30A(9), receptacleIEC603093WIRE250V32A(10), receptacleIEC603093WIRE250V60A(11), receptacleIEC603093WIRE250V63A(12), receptacleIEC603093WIRE250V100A(13), receptacleIEC603093WIRE250V125A(14), receptacleIEC603094WIRE250V20A(15), receptacleIEC603094WIRE250V30A(16), receptacleIEC603094WIRE250V60A(17), receptacleIEC603094WIRE250V100A(18), receptacleIEC603095WIRE208V20A(23), receptacleIEC603095WIRE208V30A(24), receptacleIEC603095WIRE208V60A(25), receptacleIEC603095WIRE208V100A(26), receptacleIEC603095WIRE415V16A(27), receptacleIEC603095WIRE415V32A(28), receptacleIEC603095WIRE415V63A(29), receptacleIEC603095WIRE415V125A(30), receptacleIEC603095WIRE480V20A(31), receptacleIEC603095WIRE480V30A(32), receptacleIEC603095WIRE480V60A(33), receptacleIEC603095WIRE480V100A(34), receptacleNEMA515R(35), receptacleNEMAL515R(36), receptacleNEMA520R(37), receptacleNEMAL520R(38), receptacleNEMAL530R(39), receptacleNEMAL615R(40), receptacleNEMAL620R(41), receptacleNEMAL630R(42), receptacleNEMAL1520R(43), receptacleNEMAL1530R(44), receptacleNEMAL2120RP(45), receptacleNEMAL2130R(46), receptacleSCHUKOTYPEE(47), receptacleSCHUKOTYPEF(48)
+   |  |  |     +-- -R-- Integer32 outletPoleCount(5)
+   |  |  |     |        Range: 2..4
+   |  |  |     +-- -R-- String    outletRatedVoltage(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    outletRatedCurrent(7)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- String    outletRatedVA(8)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- BitString outletDeviceCapabilities(10)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), unbalancedCurrent(2), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), onOff(13), frequency(22), phaseAngle(23), reactivePower(28), displacementPowerFactor(34), crestFactor(50)
+   |  |  |     +-- -R-- BitString outletPoleCapabilities(11)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), phaseAngle(23), rmsVoltageLN(24), reactivePower(28), displacementPowerFactor(34), crestFactor(50)
+   |  |  |     +-- -RW- Unsigned  outletPowerCyclingPowerOffPeriod(12)
+   |  |  |     |        Range: 1..3600
+   |  |  |     +-- -RW- EnumVal   outletStateOnStartup(13)
+   |  |  |     |        Textual Convention: OutletStateOnStartupEnumeration
+   |  |  |     |        Values: off(0), on(1), lastKnownState(2), globalOutletStateOnStartup(3)
+   |  |  |     +-- -RW- EnumVal   outletUseGlobalPowerCyclingPowerOffPeriod(14)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   outletSwitchable(28)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- String    outletReceptacleDescriptor(29)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- EnumVal   outletNonCritical(30)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- Unsigned  outletSequenceDelay(32)
+   |  |  |     |        Range: 0..3600
+   |  |  |     +-- -R-- ObjID     outletPowerSource(33)
+   |  |  |              Textual Convention: RowPointer
+   |  |  |
+   |  |  +--outletSensorConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--outletSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, outletId, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   outletSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   outletSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  outletSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  outletSensorAccuracy(8)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  outletSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  outletSensorTolerance(10)
+   |  |  |     +-- -R-- Unsigned  outletSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  outletSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  outletSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  outletSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  outletSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  outletSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  outletSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  outletSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString outletSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 outletSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 outletSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 outletSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 outletSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 outletSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 outletSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--outletPoleConfigurationTable(5)
+   |  |  |  |
+   |  |  |  +--outletPoleConfigurationEntry(1)
+   |  |  |     |  Index: pduId, outletId, outletPoleIndex
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   outletPoleLine(1)
+   |  |  |     |        Textual Convention: LineEnumeration
+   |  |  |     |        Values: lineL1(1), lineL2(2), lineL3(3), lineNeutral(4)
+   |  |  |     +-- -R-- Integer32 outletPoleNode(2)
+   |  |  |
+   |  |  +--outletPoleSensorConfigurationTable(6)
+   |  |     |
+   |  |     +--outletPoleSensorConfigurationEntry(1)
+   |  |        |  Index: pduId, outletId, outletPoleIndex, sensorType
+   |  |        |
+   |  |        +-- ---- Integer32 outletPoleIndex(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -RW- EnumVal   outletPoleSensorLogAvailable(4)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   outletPoleSensorUnits(6)
+   |  |        |        Textual Convention: SensorUnitsEnumeration
+   |  |        |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |        +-- -R-- Unsigned  outletPoleSensorDecimalDigits(7)
+   |  |        +-- -R-- Unsigned  outletPoleSensorAccuracy(8)
+   |  |        |        Textual Convention: HundredthsOfAPercentage
+   |  |        |        Range: 0..10000
+   |  |        +-- -R-- Unsigned  outletPoleSensorResolution(9)
+   |  |        +-- -R-- Unsigned  outletPoleSensorTolerance(10)
+   |  |        +-- -R-- Unsigned  outletPoleSensorMaximum(11)
+   |  |        +-- -R-- Unsigned  outletPoleSensorMinimum(12)
+   |  |        +-- -RW- Unsigned  outletPoleSensorHysteresis(13)
+   |  |        +-- -RW- Unsigned  outletPoleSensorStateChangeDelay(14)
+   |  |        |        Range: 0..300
+   |  |        +-- -RW- Unsigned  outletPoleSensorLowerCriticalThreshold(21)
+   |  |        +-- -RW- Unsigned  outletPoleSensorLowerWarningThreshold(22)
+   |  |        +-- -RW- Unsigned  outletPoleSensorUpperCriticalThreshold(23)
+   |  |        +-- -RW- Unsigned  outletPoleSensorUpperWarningThreshold(24)
+   |  |        +-- -RW- BitString outletPoleSensorEnabledThresholds(25)
+   |  |        |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |        +-- -R-- Integer32 outletPoleSensorSignedMaximum(26)
+   |  |        +-- -R-- Integer32 outletPoleSensorSignedMinimum(27)
+   |  |        +-- -RW- Integer32 outletPoleSensorSignedLowerCriticalThreshold(28)
+   |  |        +-- -RW- Integer32 outletPoleSensorSignedLowerWarningThreshold(29)
+   |  |        +-- -RW- Integer32 outletPoleSensorSignedUpperCriticalThreshold(30)
+   |  |        +-- -RW- Integer32 outletPoleSensorSignedUpperWarningThreshold(31)
+   |  |
+   |  +--externalSensors(6)
+   |  |  |
+   |  |  +--externalSensorConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--externalSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, sensorID
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 sensorID(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- EnumVal   externalSensorType(2)
+   |  |  |     |        Textual Convention: SensorTypeEnumeration
+   |  |  |     |        Values: rmsCurrent(1), peakCurrent(2), unbalancedCurrent(3), rmsVoltage(4), activePower(5), apparentPower(6), powerFactor(7), activeEnergy(8), apparentEnergy(9), temperature(10), humidity(11), airFlow(12), airPressure(13), onOff(14), trip(15), vibration(16), waterDetection(17), smokeDetection(18), binary(19), contact(20), fanSpeed(21), surgeProtectorStatus(22), frequency(23), phaseAngle(24), rmsVoltageLN(25), residualCurrent(26), rcmState(27), absoluteHumidity(28), reactivePower(29), other(30), none(31), powerQuality(32), overloadStatus(33), overheatStatus(34), displacementPowerFactor(35), residualDcCurrent(36), fanStatus(37), inletPhaseSyncAngle(38), inletPhaseSync(39), operatingState(40), activeInlet(41), illuminance(42), doorContact(43), tamperDetection(44), motionDetection(45), i1smpsStatus(46), i2smpsStatus(47), switchStatus(48), doorLockState(49), doorHandleLock(50), crestFactor(51)
+   |  |  |     +-- -R-- String    externalSensorSerialNumber(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    externalSensorName(4)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    externalSensorDescription(5)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    externalSensorXCoordinate(6)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    externalSensorYCoordinate(7)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    externalSensorZCoordinate(8)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- Integer32 externalSensorChannelNumber(9)
+   |  |  |     +-- -RW- EnumVal   externalOnOffSensorSubtype(10)
+   |  |  |     |        Textual Convention: SensorTypeEnumeration
+   |  |  |     |        Values: rmsCurrent(1), peakCurrent(2), unbalancedCurrent(3), rmsVoltage(4), activePower(5), apparentPower(6), powerFactor(7), activeEnergy(8), apparentEnergy(9), temperature(10), humidity(11), airFlow(12), airPressure(13), onOff(14), trip(15), vibration(16), waterDetection(17), smokeDetection(18), binary(19), contact(20), fanSpeed(21), surgeProtectorStatus(22), frequency(23), phaseAngle(24), rmsVoltageLN(25), residualCurrent(26), rcmState(27), absoluteHumidity(28), reactivePower(29), other(30), none(31), powerQuality(32), overloadStatus(33), overheatStatus(34), displacementPowerFactor(35), residualDcCurrent(36), fanStatus(37), inletPhaseSyncAngle(38), inletPhaseSync(39), operatingState(40), activeInlet(41), illuminance(42), doorContact(43), tamperDetection(44), motionDetection(45), i1smpsStatus(46), i2smpsStatus(47), switchStatus(48), doorLockState(49), doorHandleLock(50), crestFactor(51)
+   |  |  |     +-- -RW- EnumVal   externalSensorLogAvailable(14)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   externalSensorUnits(16)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  externalSensorDecimalDigits(17)
+   |  |  |     +-- -R-- Unsigned  externalSensorAccuracy(18)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  externalSensorResolution(19)
+   |  |  |     +-- -R-- Unsigned  externalSensorTolerance(20)
+   |  |  |     +-- -R-- Integer32 externalSensorMaximum(21)
+   |  |  |     +-- -R-- Integer32 externalSensorMinimum(22)
+   |  |  |     +-- -RW- Unsigned  externalSensorHysteresis(23)
+   |  |  |     +-- -RW- Unsigned  externalSensorStateChangeDelay(24)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Integer32 externalSensorLowerCriticalThreshold(31)
+   |  |  |     +-- -RW- Integer32 externalSensorLowerWarningThreshold(32)
+   |  |  |     +-- -RW- Integer32 externalSensorUpperCriticalThreshold(33)
+   |  |  |     +-- -RW- Integer32 externalSensorUpperWarningThreshold(34)
+   |  |  |     +-- -RW- BitString externalSensorEnabledThresholds(35)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- EnumVal   externalSensorIsActuator(36)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- String    externalSensorPosition(37)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- EnumVal   externalSensorUseDefaultThresholds(38)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- Integer32 externalSensorAlarmedToNormalDelay(39)
+   |  |  |              Range: 0..300
+   |  |  |
+   |  |  +--externalSensorTypeDefaultThresholdsTable(4)
+   |  |  |  |
+   |  |  |  +--externalSensorTypeDefaultThresholdsEntry(1)
+   |  |  |     |  Index: pduId, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- Unsigned  externalSensorTypeDefaultHysteresis(3)
+   |  |  |     +-- -RW- Unsigned  externalSensorTypeDefaultStateChangeDelay(4)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Integer32 externalSensorTypeDefaultLowerCriticalThreshold(5)
+   |  |  |     +-- -RW- Integer32 externalSensorTypeDefaultLowerWarningThreshold(6)
+   |  |  |     +-- -RW- Integer32 externalSensorTypeDefaultUpperCriticalThreshold(7)
+   |  |  |     +-- -RW- Integer32 externalSensorTypeDefaultUpperWarningThreshold(8)
+   |  |  |     +-- -RW- BitString externalSensorTypeDefaultEnabledThresholds(9)
+   |  |  |              Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |
+   |  |  +--peripheralDevicePackageTable(5)
+   |  |     |
+   |  |     +--peripheralDevicePackageEntry(1)
+   |  |        |  Index: pduId, peripheralDevicePackageId
+   |  |        |
+   |  |        +-- ---- Integer32 peripheralDevicePackageId(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -R-- String    peripheralDevicePackageSerialNumber(3)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- String    peripheralDevicePackageModel(4)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- String    peripheralDevicePackageFirmwareVersion(5)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- String    peripheralDevicePackageMinFirmwareVersion(6)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- Unsigned  peripheralDevicePackageFirmwareTimeStamp(7)
+   |  |        +-- -R-- String    peripheralDevicePackagePosition(8)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -R-- String    peripheralDevicePackageState(9)
+   |  |                 Textual Convention: DisplayString
+   |  |                 Size: 0..255
+   |  |
+   |  +--serverReachability(7)
+   |  |  |
+   |  |  +--serverReachabilityTable(3)
+   |  |     |
+   |  |     +--serverReachabilityEntry(1)
+   |  |        |  Index: pduId, serverID
+   |  |        |
+   |  |        +-- ---- Integer32 serverID(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -R-- String    serverIPAddress(3)
+   |  |        |        Textual Convention: DisplayString
+   |  |        |        Size: 0..255
+   |  |        +-- -RW- EnumVal   serverPingEnabled(4)
+   |  |                 Textual Convention: TruthValue
+   |  |                 Values: true(1), false(2)
+   |  |
+   |  +--wires(8)
+   |  |  |
+   |  |  +--wireConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--wireConfigurationEntry(1)
+   |  |  |     |  Index: pduId, wireId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 wireId(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    wireLabel(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- BitString wireCapabilities(3)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), unbalancedCurrent(2), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8)
+   |  |  |     +-- -R-- ObjID     wirePowerSource(4)
+   |  |  |              Textual Convention: RowPointer
+   |  |  |
+   |  |  +--wireSensorConfigurationTable(4)
+   |  |     |
+   |  |     +--wireSensorConfigurationEntry(1)
+   |  |        |  Index: pduId, wireId, sensorType
+   |  |        |
+   |  |        +-- -RW- EnumVal   wireSensorLogAvailable(4)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   wireSensorUnits(6)
+   |  |        |        Textual Convention: SensorUnitsEnumeration
+   |  |        |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |        +-- -R-- Unsigned  wireSensorDecimalDigits(7)
+   |  |        +-- -R-- Unsigned  wireSensorAccuracy(8)
+   |  |        |        Textual Convention: HundredthsOfAPercentage
+   |  |        |        Range: 0..10000
+   |  |        +-- -R-- Unsigned  wireSensorResolution(9)
+   |  |        +-- -R-- Unsigned  wireSensorTolerance(10)
+   |  |        +-- -R-- Unsigned  wireSensorMaximum(11)
+   |  |        +-- -R-- Unsigned  wireSensorMinimum(12)
+   |  |        +-- -RW- Unsigned  wireSensorHysteresis(13)
+   |  |        +-- -RW- Unsigned  wireSensorStateChangeDelay(14)
+   |  |        |        Range: 0..300
+   |  |        +-- -RW- Unsigned  wireSensorLowerCriticalThreshold(21)
+   |  |        +-- -RW- Unsigned  wireSensorLowerWarningThreshold(22)
+   |  |        +-- -RW- Unsigned  wireSensorUpperCriticalThreshold(23)
+   |  |        +-- -RW- Unsigned  wireSensorUpperWarningThreshold(24)
+   |  |        +-- -RW- BitString wireSensorEnabledThresholds(25)
+   |  |                 Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |
+   |  +--transferSwitch(9)
+   |  |  |
+   |  |  +--transferSwitchConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--transferSwitchConfigurationEntry(1)
+   |  |  |     |  Index: pduId, transferSwitchId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 transferSwitchId(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- String    transferSwitchLabel(2)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -RW- String    transferSwitchName(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- Integer32 transferSwitchPreferredInlet(4)
+   |  |  |     |        Range: 1..64
+   |  |  |     +-- -R-- Integer32 transferSwitchPoleCount(5)
+   |  |  |     |        Range: 2..4
+   |  |  |     +-- -RW- EnumVal   transferSwitchAutoReTransferEnabled(20)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- Unsigned  transferSwitchAutoReTransferWaitTime(21)
+   |  |  |     |        Range: 1..180
+   |  |  |     +-- -RW- EnumVal   transferSwitchAutoReTransferRequiresPhaseSync(22)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -RW- EnumVal   transferSwitchFrontPanelManualTransferButtonEnabled(23)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- BitString transferSwitchCapabilities(24)
+   |  |  |     |        Values: overloadStatus(32), inletPhaseSyncAngle(37), inletPhaseSync(38), operatingState(39), activeInlet(40), switchStatus(47)
+   |  |  |     +-- -R-- ObjID     transferSwitchPowerSource1(31)
+   |  |  |     |        Textual Convention: RowPointer
+   |  |  |     +-- -R-- ObjID     transferSwitchPowerSource2(32)
+   |  |  |              Textual Convention: RowPointer
+   |  |  |
+   |  |  +--transferSwitchSensorConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--transferSwitchSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, transferSwitchId, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   transferSwitchSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   transferSwitchSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorAccuracy(8)
+   |  |  |     |        Textual Convention: HundredthsOfAPercentage
+   |  |  |     |        Range: 0..10000
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorTolerance(10)
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  transferSwitchSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  transferSwitchSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString transferSwitchSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 transferSwitchSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 transferSwitchSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 transferSwitchSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 transferSwitchSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 transferSwitchSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 transferSwitchSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--transferSwitchPoleConfigurationTable(5)
+   |  |     |
+   |  |     +--transferSwitchPoleConfigurationEntry(1)
+   |  |        |  Index: pduId, transferSwitchId, transferSwitchPoleIndex
+   |  |        |
+   |  |        +-- ---- Integer32 transferSwitchPoleIndex(1)
+   |  |        |        Range: 1..256
+   |  |        +-- -R-- EnumVal   transferSwitchPoleLine(2)
+   |  |        |        Textual Convention: LineEnumeration
+   |  |        |        Values: lineL1(1), lineL2(2), lineL3(3), lineNeutral(4)
+   |  |        +-- -R-- Integer32 transferSwitchPoleIn1Node(3)
+   |  |        +-- -R-- Integer32 transferSwitchPoleIn2Node(4)
+   |  |        +-- -R-- Integer32 transferSwitchPoleOutNode(5)
+   |  |
+   |  +--powerMeter(10)
+   |  |  |
+   |  |  +--powerMeterConfigurationTable(2)
+   |  |     |
+   |  |     +--powerMeterConfigurationEntry(1)
+   |  |        |  Index: pduId
+   |  |        |
+   |  |        +-- -RW- Unsigned  powerMeterPhaseCTRating(2)
+   |  |        +-- -RW- Unsigned  powerMeterNeutralCTRating(3)
+   |  |        +-- -RW- Unsigned  powerMeterEarthCTRating(4)
+   |  |        +-- -R-- Unsigned  powerMeterBranchCount(5)
+   |  |        +-- -R-- Integer32 powerMeterPanelPositions(6)
+   |  |        |        Range: 0..256
+   |  |        +-- -R-- EnumVal   powerMeterPanelLayout(7)
+   |  |        |        Textual Convention: PanelLayoutEnumeration
+   |  |        |        Values: invalid(-1), oneColumn(1), twoColumns(2)
+   |  |        +-- -R-- EnumVal   powerMeterPanelNumbering(8)
+   |  |        |        Textual Convention: PanelNumberingEnumeration
+   |  |        |        Values: invalid(-1), oddEven(1), sequential(2)
+   |  |        +-- -R-- EnumVal   powerMeterType(9)
+   |  |                 Textual Convention: PowerMeterTypeEnumeration
+   |  |                 Values: singlePhase(1), splitPhase(2), threePhase(3)
+   |  |
+   |  +--circuit(11)
+   |  |  |
+   |  |  +--circuitConfigurationTable(2)
+   |  |  |  |
+   |  |  |  +--circuitConfigurationEntry(1)
+   |  |  |     |  Index: pduId, circuitId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 circuitId(1)
+   |  |  |     |        Range: 1..1024
+   |  |  |     +-- -R-- Integer32 circuitPoleCount(2)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -RW- String    circuitName(3)
+   |  |  |     |        Textual Convention: DisplayString
+   |  |  |     |        Size: 0..255
+   |  |  |     +-- -R-- EnumVal   circuitType(4)
+   |  |  |     |        Textual Convention: CircuitTypeEnumeration
+   |  |  |     |        Values: onePhaseLL(1), onePhaseLN(2), onePhaseLLN(3), threePhase(4)
+   |  |  |     +-- -RW- Unsigned  circuitRatedCurrent(5)
+   |  |  |     +-- -RW- Unsigned  circuitCTRating(6)
+   |  |  |     +-- -R-- BitString circuitCapabilities(7)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), unbalancedCurrent(2), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), surgeProtectorStatus(21), frequency(22), phaseAngle(23), residualCurrent(25), rcmState(26), reactivePower(28), powerQuality(31), displacementPowerFactor(34), crestFactor(50)
+   |  |  |     +-- -R-- BitString circuitPoleCapabilities(8)
+   |  |  |     |        Values: rmsCurrent(0), peakCurrent(1), rmsVoltage(3), activePower(4), apparentPower(5), powerFactor(6), activeEnergy(7), apparentEnergy(8), phaseAngle(23), rmsVoltageLN(24), reactivePower(28), displacementPowerFactor(34), crestFactor(50)
+   |  |  |     +-- -R-- ObjID     circuitPowerSource(9)
+   |  |  |              Textual Convention: RowPointer
+   |  |  |
+   |  |  +--circuitPoleConfigurationTable(3)
+   |  |  |  |
+   |  |  |  +--circuitPoleConfigurationEntry(1)
+   |  |  |     |  Index: pduId, circuitId, circuitPoleId
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 circuitPoleId(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- Integer32 circuitPolePanelPosition(2)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -RW- Integer32 circuitPoleCTNumber(3)
+   |  |  |     |        Range: 0..256
+   |  |  |     +-- -RW- EnumVal   circuitPolePhase(4)
+   |  |  |              Textual Convention: PhaseEnumeration
+   |  |  |              Values: phaseA(1), phaseB(2), phaseC(3), neutral(4), earth(5)
+   |  |  |
+   |  |  +--circuitSensorConfigurationTable(4)
+   |  |  |  |
+   |  |  |  +--circuitSensorConfigurationEntry(1)
+   |  |  |     |  Index: pduId, circuitId, sensorType
+   |  |  |     |
+   |  |  |     +-- -RW- EnumVal   circuitSensorLogAvailable(4)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   circuitSensorUnits(6)
+   |  |  |     |        Textual Convention: SensorUnitsEnumeration
+   |  |  |     |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |  |     +-- -R-- Unsigned  circuitSensorDecimalDigits(7)
+   |  |  |     +-- -R-- Unsigned  circuitSensorResolution(9)
+   |  |  |     +-- -R-- Unsigned  circuitSensorMaximum(11)
+   |  |  |     +-- -R-- Unsigned  circuitSensorMinimum(12)
+   |  |  |     +-- -RW- Unsigned  circuitSensorHysteresis(13)
+   |  |  |     +-- -RW- Unsigned  circuitSensorStateChangeDelay(14)
+   |  |  |     |        Range: 0..300
+   |  |  |     +-- -RW- Unsigned  circuitSensorLowerCriticalThreshold(21)
+   |  |  |     +-- -RW- Unsigned  circuitSensorLowerWarningThreshold(22)
+   |  |  |     +-- -RW- Unsigned  circuitSensorUpperCriticalThreshold(23)
+   |  |  |     +-- -RW- Unsigned  circuitSensorUpperWarningThreshold(24)
+   |  |  |     +-- -RW- BitString circuitSensorEnabledThresholds(25)
+   |  |  |     |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |  |     +-- -R-- Integer32 circuitSensorSignedMaximum(26)
+   |  |  |     +-- -R-- Integer32 circuitSensorSignedMinimum(27)
+   |  |  |     +-- -RW- Integer32 circuitSensorSignedLowerCriticalThreshold(28)
+   |  |  |     +-- -RW- Integer32 circuitSensorSignedLowerWarningThreshold(29)
+   |  |  |     +-- -RW- Integer32 circuitSensorSignedUpperCriticalThreshold(30)
+   |  |  |     +-- -RW- Integer32 circuitSensorSignedUpperWarningThreshold(31)
+   |  |  |
+   |  |  +--circuitPoleSensorConfigurationTable(6)
+   |  |     |
+   |  |     +--circuitPoleSensorConfigurationEntry(1)
+   |  |        |  Index: pduId, circuitId, circuitPoleId, sensorType
+   |  |        |
+   |  |        +-- -RW- EnumVal   circuitPoleSensorLogAvailable(4)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   circuitPoleSensorUnits(6)
+   |  |        |        Textual Convention: SensorUnitsEnumeration
+   |  |        |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |  |        +-- -R-- Unsigned  circuitPoleSensorDecimalDigits(7)
+   |  |        +-- -R-- Unsigned  circuitPoleSensorResolution(9)
+   |  |        +-- -R-- Unsigned  circuitPoleSensorMaximum(11)
+   |  |        +-- -R-- Unsigned  circuitPoleSensorMinimum(12)
+   |  |        +-- -RW- Unsigned  circuitPoleSensorHysteresis(13)
+   |  |        +-- -RW- Unsigned  circuitPoleSensorStateChangeDelay(14)
+   |  |        |        Range: 0..300
+   |  |        +-- -RW- Unsigned  circuitPoleSensorLowerCriticalThreshold(21)
+   |  |        +-- -RW- Unsigned  circuitPoleSensorLowerWarningThreshold(22)
+   |  |        +-- -RW- Unsigned  circuitPoleSensorUpperCriticalThreshold(23)
+   |  |        +-- -RW- Unsigned  circuitPoleSensorUpperWarningThreshold(24)
+   |  |        +-- -RW- BitString circuitPoleSensorEnabledThresholds(25)
+   |  |        |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |  |        +-- -R-- Integer32 circuitPoleSensorSignedMaximum(26)
+   |  |        +-- -R-- Integer32 circuitPoleSensorSignedMinimum(27)
+   |  |        +-- -RW- Integer32 circuitPoleSensorSignedLowerCriticalThreshold(28)
+   |  |        +-- -RW- Integer32 circuitPoleSensorSignedLowerWarningThreshold(29)
+   |  |        +-- -RW- Integer32 circuitPoleSensorSignedUpperCriticalThreshold(30)
+   |  |        +-- -RW- Integer32 circuitPoleSensorSignedUpperWarningThreshold(31)
+   |  |
+   |  +--outletGroups(12)
+   |     |
+   |     +--outletGroupConfigurationTable(2)
+   |     |  |
+   |     |  +--outletGroupConfigurationEntry(1)
+   |     |     |  Index: outletGroupId
+   |     |     |
+   |     |     +-- ---- Integer32 outletGroupId(1)
+   |     |     |        Range: 1..128
+   |     |     +-- -RW- String    outletGroupName(2)
+   |     |     |        Textual Convention: DisplayString
+   |     |     |        Size: 0..255
+   |     |     +-- -R-- BitString outletGroupCapabilities(3)
+   |     |     |        Values: activePower(4), activeEnergy(7)
+   |     |     +-- -RW- String    outletGroupMembers(4)
+   |     |              Textual Convention: DisplayString
+   |     |              Size: 0..255
+   |     |
+   |     +--outletGroupSensorConfigurationTable(3)
+   |        |
+   |        +--outletGroupSensorConfigurationEntry(1)
+   |           |  Index: outletGroupId, sensorType
+   |           |
+   |           +-- -RW- EnumVal   outletGroupSensorLogAvailable(4)
+   |           |        Textual Convention: TruthValue
+   |           |        Values: true(1), false(2)
+   |           +-- -R-- EnumVal   outletGroupSensorUnits(6)
+   |           |        Textual Convention: SensorUnitsEnumeration
+   |           |        Values: none(-1), other(0), volt(1), amp(2), watt(3), voltamp(4), wattHour(5), voltampHour(6), degreeC(7), hertz(8), percent(9), meterpersec(10), pascal(11), psi(12), g(13), degreeF(14), feet(15), inches(16), cm(17), meters(18), rpm(19), degrees(20), lux(21), grampercubicmeter(22), var(23)
+   |           +-- -R-- Unsigned  outletGroupSensorDecimalDigits(7)
+   |           +-- -R-- Unsigned  outletGroupSensorResolution(9)
+   |           +-- -R-- Unsigned  outletGroupSensorMaximum(11)
+   |           +-- -R-- Unsigned  outletGroupSensorMinimum(12)
+   |           +-- -RW- Unsigned  outletGroupSensorHysteresis(13)
+   |           +-- -RW- Unsigned  outletGroupSensorStateChangeDelay(14)
+   |           +-- -RW- Unsigned  outletGroupSensorLowerCriticalThreshold(21)
+   |           +-- -RW- Unsigned  outletGroupSensorLowerWarningThreshold(22)
+   |           +-- -RW- Unsigned  outletGroupSensorUpperCriticalThreshold(23)
+   |           +-- -RW- Unsigned  outletGroupSensorUpperWarningThreshold(24)
+   |           +-- -RW- BitString outletGroupSensorEnabledThresholds(25)
+   |           |        Values: lowerCritical(0), lowerWarning(1), upperWarning(2), upperCritical(3)
+   |           +-- -R-- Integer32 outletGroupSensorSignedMaximum(26)
+   |           +-- -R-- Integer32 outletGroupSensorSignedMinimum(27)
+   |           +-- -RW- Integer32 outletGroupSensorSignedLowerCriticalThreshold(28)
+   |           +-- -RW- Integer32 outletGroupSensorSignedLowerWarningThreshold(29)
+   |           +-- -RW- Integer32 outletGroupSensorSignedUpperCriticalThreshold(30)
+   |           +-- -RW- Integer32 outletGroupSensorSignedUpperWarningThreshold(31)
+   |
+   +--control(4)
+   |  |
+   |  +--outletControl(1)
+   |  |  |
+   |  |  +--outletSwitchControlTable(2)
+   |  |     |
+   |  |     +--outletSwitchControlEntry(1)
+   |  |        |  Index: pduId, outletId
+   |  |        |
+   |  |        +-- -RW- EnumVal   switchingOperation(2)
+   |  |        |        Textual Convention: OutletSwitchingOperationsEnumeration
+   |  |        |        Values: off(0), on(1), cycle(2)
+   |  |        +-- -R-- EnumVal   outletSwitchingState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  outletSwitchingTimeStamp(4)
+   |  |
+   |  +--externalSensorControl(2)
+   |  |
+   |  +--transferSwitchControl(3)
+   |  |  |
+   |  |  +--transferSwitchControlTable(1)
+   |  |     |
+   |  |     +--transferSwitchControlEntry(1)
+   |  |        |  Index: pduId, transferSwitchId
+   |  |        |
+   |  |        +-- -R-- Integer32 transferSwitchActiveInlet(1)
+   |  |        |        Range: 1..64
+   |  |        +-- -RW- Integer32 transferSwitchTransferToInlet(2)
+   |  |        |        Range: 0..64
+   |  |        +-- -RW- EnumVal   transferSwitchAlarmOverride(3)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   transferSwitchLastTransferReason(4)
+   |  |                 Textual Convention: TransferSwitchTransferReasonEnumeration
+   |  |                 Values: unknown(0), startup(1), manualTransfer(2), automaticReTransfer(3), powerFailure(4), powerQuality(5), overloadAlarm(6), overheatAlarm(7), internalFailure(8)
+   |  |
+   |  +--actuatorControl(4)
+   |  |  |
+   |  |  +--actuatorControlTable(2)
+   |  |     |
+   |  |     +--actuatorControlEntry(1)
+   |  |        |  Index: pduId, sensorID
+   |  |        |
+   |  |        +-- -RW- EnumVal   actuatorState(2)
+   |  |                 Textual Convention: SensorStateEnumeration
+   |  |                 Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |
+   |  +--rcmControl(5)
+   |  |  |
+   |  |  +--rcmSelfTestTable(2)
+   |  |     |
+   |  |     +--rcmSelfTestEntry(1)
+   |  |        |  Index: pduId, inletId
+   |  |        |
+   |  |        +-- -RW- EnumVal   rcmState(2)
+   |  |                 Textual Convention: SensorStateEnumeration
+   |  |                 Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |
+   |  +--inletSensorControl(6)
+   |  |  |
+   |  |  +--inletSensorControlTable(1)
+   |  |     |
+   |  |     +--inletSensorControlEntry(1)
+   |  |        |  Index: pduId, inletId, sensorType
+   |  |        |
+   |  |        +-- -RW- Integer32 inletSensorResetValue(1)
+   |  |
+   |  +--outletSensorControl(7)
+   |  |  |
+   |  |  +--outletSensorControlTable(1)
+   |  |     |
+   |  |     +--outletSensorControlEntry(1)
+   |  |        |  Index: pduId, outletId, sensorType
+   |  |        |
+   |  |        +-- -RW- Integer32 outletSensorResetValue(1)
+   |  |
+   |  +--unitSensorControl(8)
+   |  |  |
+   |  |  +--unitSensorControlTable(1)
+   |  |     |
+   |  |     +--unitSensorControlEntry(1)
+   |  |        |  Index: pduId, sensorType
+   |  |        |
+   |  |        +-- -RW- Integer32 unitSensorResetValue(1)
+   |  |
+   |  +--circuitSensorControl(9)
+   |  |  |
+   |  |  +--circuitSensorControlTable(1)
+   |  |     |
+   |  |     +--circuitSensorControlEntry(1)
+   |  |        |  Index: pduId, circuitId, sensorType
+   |  |        |
+   |  |        +-- -RW- Integer32 circuitSensorResetValue(1)
+   |  |
+   |  +--outletGroupControl(10)
+   |  |  |
+   |  |  +--outletGroupSwitchControlTable(2)
+   |  |     |
+   |  |     +--outletGroupSwitchControlEntry(1)
+   |  |        |  Index: outletGroupId
+   |  |        |
+   |  |        +-- -RW- EnumVal   outletGroupSwitchingOperation(2)
+   |  |                 Textual Convention: OutletSwitchingOperationsEnumeration
+   |  |                 Values: off(0), on(1), cycle(2)
+   |  |
+   |  +--outletGroupSensorControl(11)
+   |  |  |
+   |  |  +--outletGroupSensorControlTable(1)
+   |  |     |
+   |  |     +--outletGroupSensorControlEntry(1)
+   |  |        |  Index: outletGroupId, sensorType
+   |  |        |
+   |  |        +-- -RW- Integer32 outletGroupSensorResetValue(1)
+   |  |
+   |  +--serverPowerControl(12)
+   |     |
+   |     +--serverPowerControlTable(1)
+   |        |
+   |        +--serverPowerControlEntry(1)
+   |           |  Index: pduId, serverID
+   |           |
+   |           +-- -RW- EnumVal   serverPowerControlOperation(1)
+   |                    Textual Convention: ServerPowerStateEnumeration
+   |                    Values: unknown(0), on(1), off(2), shuttingDown(3)
+   |
+   +--measurements(5)
+   |  |
+   |  +--measurementsUnit(1)
+   |  |  |
+   |  |  +--unitSensorMeasurementsTable(3)
+   |  |     |
+   |  |     +--unitSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsUnitSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsUnitSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsUnitSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsUnitSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsUnitSensorSignedValue(6)
+   |  |
+   |  +--measurementsInlet(2)
+   |  |  |
+   |  |  +--inletSensorMeasurementsTable(3)
+   |  |  |  |
+   |  |  |  +--inletSensorMeasurementsEntry(1)
+   |  |  |     |  Index: pduId, inletId, sensorType
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   measurementsInletSensorIsAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   measurementsInletSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  measurementsInletSensorValue(4)
+   |  |  |     +-- -R-- Unsigned  measurementsInletSensorTimeStamp(5)
+   |  |  |     +-- -R-- Integer32 measurementsInletSensorSignedValue(6)
+   |  |  |
+   |  |  +--inletPoleSensorMeasurementsTable(4)
+   |  |     |
+   |  |     +--inletPoleSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, inletId, inletPoleIndex, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsInletPoleSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsInletPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsInletPoleSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsInletPoleSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsInletPoleSensorSignedValue(6)
+   |  |
+   |  +--measurementsOverCurrentProtector(3)
+   |  |  |
+   |  |  +--overCurrentProtectorSensorMeasurementsTable(3)
+   |  |     |
+   |  |     +--overCurrentProtectorSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, overCurrentProtectorIndex, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsOverCurrentProtectorSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsOverCurrentProtectorSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsOverCurrentProtectorSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsOverCurrentProtectorSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsOverCurrentProtectorSensorSignedValue(6)
+   |  |
+   |  +--measurementsOutlet(4)
+   |  |  |
+   |  |  +--outletSensorMeasurementsTable(3)
+   |  |  |  |
+   |  |  |  +--outletSensorMeasurementsEntry(1)
+   |  |  |     |  Index: pduId, outletId, sensorType
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   measurementsOutletSensorIsAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   measurementsOutletSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  measurementsOutletSensorValue(4)
+   |  |  |     +-- -R-- Unsigned  measurementsOutletSensorTimeStamp(5)
+   |  |  |     +-- -R-- Integer32 measurementsOutletSensorSignedValue(6)
+   |  |  |
+   |  |  +--outletPoleSensorMeasurementsTable(4)
+   |  |     |
+   |  |     +--outletPoleSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, outletId, outletPoleIndex, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsOutletPoleSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsOutletPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsOutletPoleSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsOutletPoleSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsOutletPoleSensorSignedValue(6)
+   |  |
+   |  +--measurementsExternalSensor(5)
+   |  |  |
+   |  |  +--externalSensorMeasurementsTable(3)
+   |  |     |
+   |  |     +--externalSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, sensorID
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsExternalSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsExternalSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Integer32 measurementsExternalSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsExternalSensorTimeStamp(5)
+   |  |
+   |  +--measurementsWire(6)
+   |  |  |
+   |  |  +--wireSensorMeasurementsTable(3)
+   |  |     |
+   |  |     +--wireSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, wireId, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsWireSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsWireSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsWireSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsWireSensorTimeStamp(5)
+   |  |
+   |  +--measurementsTransferSwitch(7)
+   |  |  |
+   |  |  +--transferSwitchSensorMeasurementsTable(3)
+   |  |     |
+   |  |     +--transferSwitchSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, transferSwitchId, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsTransferSwitchSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsTransferSwitchSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsTransferSwitchSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsTransferSwitchSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsTransferSwitchSensorSignedValue(6)
+   |  |
+   |  +--measurementsCircuit(8)
+   |  |  |
+   |  |  +--circuitSensorMeasurementsTable(3)
+   |  |  |  |
+   |  |  |  +--circuitSensorMeasurementsEntry(1)
+   |  |  |     |  Index: pduId, circuitId, sensorType
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   measurementsCircuitSensorIsAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   measurementsCircuitSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  measurementsCircuitSensorValue(4)
+   |  |  |     +-- -R-- Unsigned  measurementsCircuitSensorTimeStamp(5)
+   |  |  |     +-- -R-- Integer32 measurementsCircuitSensorSignedValue(6)
+   |  |  |
+   |  |  +--circuitPoleSensorMeasurementsTable(4)
+   |  |     |
+   |  |     +--circuitPoleSensorMeasurementsEntry(1)
+   |  |        |  Index: pduId, circuitId, circuitPoleId, sensorType
+   |  |        |
+   |  |        +-- -R-- EnumVal   measurementsCircuitPoleSensorIsAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   measurementsCircuitPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  measurementsCircuitPoleSensorValue(4)
+   |  |        +-- -R-- Unsigned  measurementsCircuitPoleSensorTimeStamp(5)
+   |  |        +-- -R-- Integer32 measurementsCircuitPoleSensorSignedValue(6)
+   |  |
+   |  +--measurementsOutletGroup(9)
+   |     |
+   |     +--outletGroupSensorMeasurementsTable(3)
+   |        |
+   |        +--outletGroupSensorMeasurementsEntry(1)
+   |           |  Index: outletGroupId, sensorType
+   |           |
+   |           +-- -R-- EnumVal   measurementsOutletGroupSensorIsAvailable(2)
+   |           |        Textual Convention: TruthValue
+   |           |        Values: true(1), false(2)
+   |           +-- -R-- EnumVal   measurementsOutletGroupSensorState(3)
+   |           |        Textual Convention: SensorStateEnumeration
+   |           |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |           +-- -R-- Unsigned  measurementsOutletGroupSensorValue(4)
+   |           +-- -R-- Unsigned  measurementsOutletGroupSensorTimeStamp(5)
+   |           +-- -R-- Integer32 measurementsOutletGroupSensorSignedValue(6)
+   |
+   +--log(6)
+   |  |
+   |  +--logUnit(1)
+   |  |  |
+   |  |  +--logIndexTable(1)
+   |  |  |  |
+   |  |  |  +--logIndexEntry(1)
+   |  |  |     |  Index: pduId
+   |  |  |     |
+   |  |  |     +-- -R-- Integer32 oldestLogID(2)
+   |  |  |     +-- -R-- Integer32 newestLogID(3)
+   |  |  |
+   |  |  +--logTimeStampTable(2)
+   |  |  |  |
+   |  |  |  +--logTimeStampEntry(1)
+   |  |  |     |  Index: pduId, logIndex
+   |  |  |     |
+   |  |  |     +-- ---- Integer32 logIndex(1)
+   |  |  |     |        Range: 1..256
+   |  |  |     +-- -R-- Unsigned  logTimeStamp(2)
+   |  |  |
+   |  |  +--unitSensorLogTable(3)
+   |  |     |
+   |  |     +--unitSensorLogEntry(1)
+   |  |        |  Index: pduId, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logUnitSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logUnitSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logUnitSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logUnitSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logUnitSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logUnitSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logUnitSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logUnitSensorSignedMinValue(9)
+   |  |
+   |  +--logInlet(2)
+   |  |  |
+   |  |  +--inletSensorLogTable(3)
+   |  |  |  |
+   |  |  |  +--inletSensorLogEntry(1)
+   |  |  |     |  Index: pduId, inletId, sensorType, logIndex
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   logInletSensorDataAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   logInletSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  logInletSensorAvgValue(4)
+   |  |  |     +-- -R-- Unsigned  logInletSensorMaxValue(5)
+   |  |  |     +-- -R-- Unsigned  logInletSensorMinValue(6)
+   |  |  |     +-- -R-- Integer32 logInletSensorSignedAvgValue(7)
+   |  |  |     +-- -R-- Integer32 logInletSensorSignedMaxValue(8)
+   |  |  |     +-- -R-- Integer32 logInletSensorSignedMinValue(9)
+   |  |  |
+   |  |  +--inletPoleSensorLogTable(4)
+   |  |     |
+   |  |     +--inletPoleSensorLogEntry(1)
+   |  |        |  Index: pduId, inletId, inletPoleIndex, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logInletPoleSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logInletPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logInletPoleSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logInletPoleSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logInletPoleSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logInletPoleSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logInletPoleSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logInletPoleSensorSignedMinValue(9)
+   |  |
+   |  +--logOverCurrentProtector(3)
+   |  |  |
+   |  |  +--overCurrentProtectorSensorLogTable(3)
+   |  |     |
+   |  |     +--overCurrentProtectorSensorLogEntry(1)
+   |  |        |  Index: pduId, overCurrentProtectorIndex, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logOverCurrentProtectorSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logOverCurrentProtectorSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logOverCurrentProtectorSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logOverCurrentProtectorSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logOverCurrentProtectorSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logOverCurrentProtectorSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logOverCurrentProtectorSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logOverCurrentProtectorSensorSignedMinValue(9)
+   |  |
+   |  +--logOutlet(4)
+   |  |  |
+   |  |  +--outletSensorLogTable(3)
+   |  |  |  |
+   |  |  |  +--outletSensorLogEntry(1)
+   |  |  |     |  Index: pduId, outletId, sensorType, logIndex
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   logOutletSensorDataAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   logOutletSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  logOutletSensorAvgValue(4)
+   |  |  |     +-- -R-- Unsigned  logOutletSensorMaxValue(5)
+   |  |  |     +-- -R-- Unsigned  logOutletSensorMinValue(6)
+   |  |  |     +-- -R-- Integer32 logOutletSensorSignedAvgValue(7)
+   |  |  |     +-- -R-- Integer32 logOutletSensorSignedMaxValue(8)
+   |  |  |     +-- -R-- Integer32 logOutletSensorSignedMinValue(9)
+   |  |  |
+   |  |  +--outletPoleSensorLogTable(4)
+   |  |     |
+   |  |     +--outletPoleSensorLogEntry(1)
+   |  |        |  Index: pduId, outletId, outletPoleIndex, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logOutletPoleSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logOutletPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logOutletPoleSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logOutletPoleSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logOutletPoleSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logOutletPoleSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logOutletPoleSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logOutletPoleSensorSignedMinValue(9)
+   |  |
+   |  +--logExternalSensor(5)
+   |  |  |
+   |  |  +--externalSensorLogTable(3)
+   |  |     |
+   |  |     +--externalSensorLogEntry(1)
+   |  |        |  Index: pduId, sensorID, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logExternalSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logExternalSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Integer32 logExternalSensorAvgValue(4)
+   |  |        +-- -R-- Integer32 logExternalSensorMaxValue(5)
+   |  |        +-- -R-- Integer32 logExternalSensorMinValue(6)
+   |  |
+   |  +--logWire(6)
+   |  |  |
+   |  |  +--wireSensorLogTable(3)
+   |  |     |
+   |  |     +--wireSensorLogEntry(1)
+   |  |        |  Index: pduId, wireId, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logWireSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logWireSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logWireSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logWireSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logWireSensorMinValue(6)
+   |  |
+   |  +--logTransferSwitch(7)
+   |  |  |
+   |  |  +--transferSwitchSensorLogTable(3)
+   |  |     |
+   |  |     +--transferSwitchSensorLogEntry(1)
+   |  |        |  Index: pduId, transferSwitchId, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logTransferSwitchSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logTransferSwitchSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logTransferSwitchSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logTransferSwitchSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logTransferSwitchSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logTransferSwitchSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logTransferSwitchSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logTransferSwitchSensorSignedMinValue(9)
+   |  |
+   |  +--logCircuit(8)
+   |  |  |
+   |  |  +--circuitSensorLogTable(3)
+   |  |  |  |
+   |  |  |  +--circuitSensorLogEntry(1)
+   |  |  |     |  Index: pduId, circuitId, sensorType, logIndex
+   |  |  |     |
+   |  |  |     +-- -R-- EnumVal   logCircuitSensorDataAvailable(2)
+   |  |  |     |        Textual Convention: TruthValue
+   |  |  |     |        Values: true(1), false(2)
+   |  |  |     +-- -R-- EnumVal   logCircuitSensorState(3)
+   |  |  |     |        Textual Convention: SensorStateEnumeration
+   |  |  |     |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |  |     +-- -R-- Unsigned  logCircuitSensorAvgValue(4)
+   |  |  |     +-- -R-- Unsigned  logCircuitSensorMaxValue(5)
+   |  |  |     +-- -R-- Unsigned  logCircuitSensorMinValue(6)
+   |  |  |     +-- -R-- Integer32 logCircuitSensorSignedAvgValue(7)
+   |  |  |     +-- -R-- Integer32 logCircuitSensorSignedMaxValue(8)
+   |  |  |     +-- -R-- Integer32 logCircuitSensorSignedMinValue(9)
+   |  |  |
+   |  |  +--circuitPoleSensorLogTable(5)
+   |  |     |
+   |  |     +--circuitPoleSensorLogEntry(1)
+   |  |        |  Index: pduId, circuitId, circuitPoleId, sensorType, logIndex
+   |  |        |
+   |  |        +-- -R-- EnumVal   logCircuitPoleSensorDataAvailable(2)
+   |  |        |        Textual Convention: TruthValue
+   |  |        |        Values: true(1), false(2)
+   |  |        +-- -R-- EnumVal   logCircuitPoleSensorState(3)
+   |  |        |        Textual Convention: SensorStateEnumeration
+   |  |        |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |  |        +-- -R-- Unsigned  logCircuitPoleSensorAvgValue(4)
+   |  |        +-- -R-- Unsigned  logCircuitPoleSensorMaxValue(5)
+   |  |        +-- -R-- Unsigned  logCircuitPoleSensorMinValue(6)
+   |  |        +-- -R-- Integer32 logCircuitPoleSensorSignedAvgValue(7)
+   |  |        +-- -R-- Integer32 logCircuitPoleSensorSignedMaxValue(8)
+   |  |        +-- -R-- Integer32 logCircuitPoleSensorSignedMinValue(9)
+   |  |
+   |  +--logOutletGroup(9)
+   |     |
+   |     +--outletGroupSensorLogTable(3)
+   |        |
+   |        +--outletGroupSensorLogEntry(1)
+   |           |  Index: outletGroupId, sensorType, logIndex
+   |           |
+   |           +-- -R-- EnumVal   logOutletGroupSensorDataAvailable(2)
+   |           |        Textual Convention: TruthValue
+   |           |        Values: true(1), false(2)
+   |           +-- -R-- EnumVal   logOutletGroupSensorState(3)
+   |           |        Textual Convention: SensorStateEnumeration
+   |           |        Values: unavailable(-1), open(0), closed(1), belowLowerCritical(2), belowLowerWarning(3), normal(4), aboveUpperWarning(5), aboveUpperCritical(6), on(7), off(8), detected(9), notDetected(10), alarmed(11), ok(12), fail(14), yes(15), no(16), standby(17), one(18), two(19), inSync(20), outOfSync(21), i1OpenFault(22), i1ShortFault(23), i2OpenFault(24), i2ShortFault(25), fault(26), warning(27), critical(28), selfTest(29), nonRedundant(30)
+   |           +-- -R-- Unsigned  logOutletGroupSensorAvgValue(4)
+   |           +-- -R-- Unsigned  logOutletGroupSensorMaxValue(5)
+   |           +-- -R-- Unsigned  logOutletGroupSensorMinValue(6)
+   |           +-- -R-- Integer32 logOutletGroupSensorSignedAvgValue(7)
+   |           +-- -R-- Integer32 logOutletGroupSensorSignedMaxValue(8)
+   |           +-- -R-- Integer32 logOutletGroupSensorSignedMinValue(9)
+   |
+   +--conformance(9)
+   |  |
+   |  +--compliances(1)
+   |  |  |
+   |  |  +--complianceRev1(1)
+   |  |  +--complianceRev2(2)
+   |  |
+   |  +--groups(2)
+   |     |
+   |     +--configGroup(1)
+   |     +--logGroup(2)
+   |     +--measurementsGroup(3)
+   |     +--controlGroup(4)
+   |     +--trapInformationGroup(5)
+   |     +--trapsGroup(9)
+   |     +--reliabilityGroup(10)
+   |     +--ipAddressGroup(12)
+   |     +--oldConfigGroup(13)
+   |     +--oldTrapsGroup(16)
+   |     +--obsoleteTrapsGroup(17)
+   |     +--obsoleteObjectsGroup(20)
+   |
+   +--reliability(10)
+      |
+      +--reliabilityData(1)
+      |  |
+      |  +-- -R-- Integer32 reliabilityDataTableSequenceNumber(1)
+      |  |        Range: 1..2147483647
+      |  |
+      |  +--reliabilityDataTable(2)
+      |     |
+      |     +--reliabilityDataEntry(1)
+      |        |  Index: reliabilityIndex
+      |        |
+      |        +-- ---- Integer32 reliabilityIndex(1)
+      |        |        Range: 1..4096
+      |        +-- -R-- String    reliabilityId(2)
+      |        |        Textual Convention: DisplayString
+      |        |        Size: 0..255
+      |        +-- -R-- Unsigned  reliabilityDataValue(3)
+      |        +-- -R-- Unsigned  reliabilityDataMaxPossible(4)
+      |        +-- -R-- Unsigned  reliabilityDataWorstValue(5)
+      |        +-- -R-- Unsigned  reliabilityDataThreshold(6)
+      |        +-- -R-- Unsigned  reliabilityDataRawUpperBytes(7)
+      |        +-- -R-- Unsigned  reliabilityDataRawLowerBytes(8)
+      |        +-- -R-- BitString reliabilityDataFlags(9)
+      |                 Values: invalidFlag(0), oldValue(1), criticalEntry(2)
+      |
+      +--reliabilityErrorLog(2)
+      |  |
+      |  +--reliabilityErrorLogTable(2)
+      |     |
+      |     +--reliabilityErrorLogEntry(1)
+      |        |  Index: reliabilityErrorLogIndex
+      |        |
+      |        +-- ---- Integer32 reliabilityErrorLogIndex(1)
+      |        |        Range: 1..2147483647
+      |        +-- -R-- String    reliabilityErrorLogId(2)
+      |        |        Textual Convention: DisplayString
+      |        |        Size: 0..255
+      |        +-- -R-- Unsigned  reliabilityErrorLogValue(3)
+      |        +-- -R-- Unsigned  reliabilityErrorLogThreshold(6)
+      |        +-- -R-- Unsigned  reliabilityErrorLogRawUpperBytes(7)
+      |        +-- -R-- Unsigned  reliabilityErrorLogRawLowerBytes(8)
+      |        +-- -R-- Unsigned  reliabilityErrorLogPOH(9)
+      |        +-- -R-- Unsigned  reliabilityErrorLogTime(10)
+      |
+      +--reliabilityHardwareHealth(3)
+         |
+         +--hwFailureTable(1)
+            |
+            +--hwFailureEntry(1)
+               |  Index: pduId, hwFailureIndex
+               |
+               +-- ---- Integer32 hwFailureIndex(1)
+               |        Range: 1..65535
+               +-- -R-- String    hwFailureComponentId(2)
+               |        Textual Convention: DisplayString
+               |        Size: 0..255
+               +-- -R-- EnumVal   hwFailureType(3)
+               |        Textual Convention: HwFailureTypeEnumeration
+               |        Values: networkDeviceNotDetected(1), i2cBusStuck(2), slaveCtrlNotReachable(3), slaveCtrlMalfunction(4), outletPowerStateInconsistent(5)
+               +-- -R-- EnumVal   hwFailureAsserted(4)
+               |        Textual Convention: TruthValue
+               |        Values: true(1), false(2)
+               +-- -R-- Unsigned  hwFailureLastAssertTimeStamp(5)
+               +-- -R-- Unsigned  hwFailureLastDeassertTimeStamp(6)
+               +-- -R-- Unsigned  hwFailureAssertCount(7)
