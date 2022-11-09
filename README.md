@@ -24,3 +24,10 @@ GEIST
 [GEIST/](GEIST/)
 
 Sourced from local Geist IMD PDU http://10.x.x.x/mib.zip
+
+Fortinet
+---
+
+[Fortinet/](Fortinet/)
+
+Sourced from local Fortigate https://10.x.x.x/ng/system/snmp
